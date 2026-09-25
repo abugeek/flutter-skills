@@ -1,17 +1,17 @@
 ---
 name: leancode-flutter
-description: Flutter reference knowledge from LeanCode - glossary of 84 Flutter topics plus 108 in-depth blog articles (architecture, state management/BLoC, routing, testing/Patrol, performance, CI/CD, native interop, accessibility, migration to Flutter). Use when writing, reviewing, or designing Flutter/Dart code, or when choosing a Flutter package or approach.
+description: Index of LeanCode's free Flutter glossary (84 topics) and blog (108 articles) with live links - routing, platform integrations (maps, BLE, camera, payments, push), storage, Firebase, release to stores, add-to-app, migration to Flutter (from Xamarin/React Native/native), enterprise and banking apps, design systems, Patrol, accessibility, localization. Use when a Flutter question needs real-world experience or a topic not covered by the flutter-architecture, flutter-state-management, flutter-testing, flutter-performance or flutter-dart-style skills.
 ---
 
-Knowledge base lives in `leancode/` next to this repo's `scrape.py`.
+# LeanCode Flutter knowledge (live links)
 
-For these topics, prefer the distilled skills first. They hold the key rules, verified against current official docs: `flutter-architecture`, `flutter-state-management`, `flutter-testing`, `flutter-performance`, `flutter-dart-style`.
+For architecture, state management, testing, performance and Dart style, use those skills first. They're verified against current official docs. Use this skill for everything else, or when you want LeanCode's real-project experience.
 
-**LeanCode articles date from 2019-2026, and some are outdated** (e.g. Hive/Isar advice, Riverpod 2 APIs, "always use Riverpod codegen", `$.native` in Patrol). Check the `published`/`source` date and cross-check package advice against `sources/packages.json` (pub.dev versions) or the official docs in `sources/` before recommending it. Use this skill for everything else (routing, platform integrations, storage, release, Firebase, migration, etc.) or when you need the full source article.
+1. **Search, don't read**: grep the index for the topic, e.g. `grep -i "bluetooth\|ble" references/*.md`.
+   - `references/glossary.md`: short topic explainers (what it is, when to use, best practices, common mistakes)
+   - `references/blog.md`: in-depth articles, case studies, talks
+2. Open only the 1-2 best matches. If a local copy exists (`leancode/<section>/<slug>.md`, created by `scrape.py`), read that. Otherwise fetch the URL with WebFetch, and ask for just what you need (e.g. "extract best practices and common mistakes"). Don't request the whole page.
+3. **Check freshness before recommending packages or APIs.** Some articles date back to 2019. Known-outdated advice includes Isar/Hive (use drift or hive_ce), Riverpod 2 APIs, "always use Riverpod codegen", and Patrol `$.native` (now `$.platform`). Cross-check against `generated/package-versions.md` or pub.dev.
+4. Cite the URL you used.
 
-1. Grep or read the indexes (one line per page): `leancode/glossary/INDEX.md` for short definitions and best practices, `leancode/blog/INDEX.md` for deep dives and real-world experience.
-2. Open only the matching `<slug>.md` files. Frontmatter has `related:` glossary slugs to follow, and `videos:` links for talks.
-3. Blog posts are long; grep for the relevant `## ` heading and read that section instead of the whole file.
-4. When advising, prefer "Best practices" / "Common mistakes" sections and cite the `source:` URL.
-
-Do not read whole folders. Content © LeanCode (leancode.co).
+Content © LeanCode (leancode.co). This skill ships only titles, links and one-line descriptions.
