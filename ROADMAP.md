@@ -18,6 +18,24 @@ Revised budget with automation: **~400-600k tokens total** (was 1.3-2.1M). Rules
 | 6 | Discoverability | — | `flutter-skills-index` (router listing every skill + when to use), sharper descriptions, cross-links, trigger eval (small: ~10 queries/skill, 1 run) |
 | 7 | Evals | reuse `skills-workspace` pattern | 1–2 evals per new skill, with-skill vs baseline, Sonnet |
 
+## Batch 2 (after batch 1, same rules)
+| # | Skill | Covers | Primary sources |
+|---|---|---|---|
+| 8 | `flutter-navigation` | go_router 18 (typed routes, redirects/auth, shell routes, deep links), back handling (PopScope), web URLs | pub.dev/go_router docs, docs.flutter.dev/ui/navigation |
+| 9 | `flutter-networking-security` | dio interceptors, auth token refresh, cert pinning, secure storage, secrets/obfuscation, biometrics done right | docs.flutter.dev/security, dio README, OWASP MASVS |
+| 10 | `flutter-ui-system` | theming (ThemeExtension, M3 tokens), adaptive/responsive layout, accessibility (semantics, text scale), i18n (gen-l10n, ARB) | docs.flutter.dev/ui, accessibility, internationalization |
+| 11 | `flutter-platform-integration` | platform channels vs Pigeon vs FFI/JNIgen/FFIgen, SwiftPM, built-in Kotlin, add-to-app | docs.flutter.dev/platform-integration |
+| 12 | `flutter-release-ci` | flavors, signing, CI (GitHub Actions/Codemagic), store release, Shorebird/code push, versioning | docs.flutter.dev/deployment |
+
+## Quality bar: no AI slop (every skill must pass before commit)
+- **Delta only**: include a rule only if a no-skill baseline gets it wrong or the choice is opinionated. No textbook Flutter.
+- **Actionable + why**: every bullet is "do X (because Y)" or "X → Y". No intros, no summaries, no "in conclusion", no marketing adjectives ("powerful", "robust", "seamless").
+- **Sourced + dated**: each section names its primary source; the skill has a "Verified YYYY-MM-DD, versions" line.
+- **Compiles**: every code block of 3+ lines goes into `checks/` and passes `dart analyze`.
+- **No duplication**: a fact lives in one skill; others link to it (`see flutter-dart-style §3`).
+- **Budget**: SKILL.md ≤ 120 lines; details in `references/` loaded on demand; the description names concrete triggers (APIs, error messages, package names).
+- **Tested**: ≥1 regex eval in `evals/checks.json` per skill, targeting what the baseline got wrong.
+
 ## Token budget notes
 - Start a **fresh session** (read this file + skills list) — continuing a long session re-sends its whole context on every tool call.
 - Research content is condensed by script before reading; only "what changed" is read in full.
