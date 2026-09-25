@@ -43,6 +43,10 @@ SOURCES = {
         "resources/language/evolution"]],
 }
 
+# fetched verbatim to a fixed path (data files that aren't docs pages)
+VERBATIM = {"flutter/app-architecture__recommendations_table.yml":
+            f"{GH}/flutter/website/main/sites/docs/src/data/architectureRecommendations.yml"}
+
 # state-management candidates + packages the skills recommend (versions must be current)
 PACKAGES = """flutter_bloc bloc bloc_test bloc_concurrency hydrated_bloc flutter_riverpod riverpod
 riverpod_annotation riverpod_generator riverpod_lint hooks_riverpod provider signals get mobx
@@ -111,6 +115,9 @@ def main():
                 (out / publisher / f"{name}.md").write_text(f"<!-- source: {url} | fetched: {today} -->\n\n{clean_mdx(text, url)}\n")
             print(f"ok {publisher}/{name}")
 
+    for rel, url in VERBATIM.items():
+        if text := curl(url):
+            (out / rel).write_text(text)
     fetch_breaking(out)
 
     stats = {}
