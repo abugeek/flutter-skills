@@ -1,0 +1,174 @@
+[
+ {
+  "id": 0,
+  "name": "state-cubit-review",
+  "checks": [
+   {
+    "text": "context.mounted after await",
+    "must": "mounted"
+   },
+   {
+    "text": "Future not created in build()",
+    "must": "initState|in build\\(\\)|inside build"
+   },
+   {
+    "text": "one-off effect via listener/presentation event",
+    "must": "BlocListener|BlocPresentationListener|emitPresentation"
+   },
+   {
+    "text": "try/catch \u2192 failure state",
+    "must": "catch \\("
+   },
+   {
+    "text": "ApiClient injected via constructor",
+    "must": "required ApiClient|LoginCubit\\(this\\._api\\)|this\\._api"
+   }
+  ]
+ },
+ {
+  "id": 1,
+  "name": "perf-janky-feed",
+  "checks": [
+   {
+    "text": "parsing out of build()",
+    "must": "initState|didUpdateWidget|late (final )?List"
+   },
+   {
+    "text": "ListView.builder + Expanded",
+    "must": "Expanded\\([\\s\\S]{0,80}ListView\\.builder"
+   },
+   {
+    "text": "explains shrinkWrap kills laziness",
+    "must": "shrinkWrap[^.\\n]{0,160}(lazi|laz[yi]|defeat|every (item|child))"
+   },
+   {
+    "text": "cacheWidth/ResizeImage",
+    "must": "cacheWidth|cacheHeight|ResizeImage"
+   },
+   {
+    "text": "Opacity replaced",
+    "must": "opacity: (const )?AlwaysStoppedAnimation|withValues\\(alpha|FadeTransition|AnimatedOpacity"
+   },
+   {
+    "text": "profile mode",
+    "must": "profile mode"
+   }
+  ]
+ },
+ {
+  "id": 2,
+  "name": "testing-goldens-and-permissions",
+  "checks": [
+   {
+    "text": "goldens platform-sensitive",
+    "must": "platform[- ]sensitive|CoreText|FreeType|font render"
+   },
+   {
+    "text": "Alchemist",
+    "must": "alchemist"
+   },
+   {
+    "text": "Patrol",
+    "must": "patrol"
+   },
+   {
+    "text": "uses $.platform",
+    "must": "\\$\\.platform"
+   },
+   {
+    "text": "no deprecated $.native in code",
+    "must_not": "await \\$\\.native",
+    "in": "code"
+   }
+  ]
+ },
+ {
+  "id": 3,
+  "name": "architecture-new-app",
+  "checks": [
+   {
+    "text": "feature folders",
+    "must": "features?/|by feature|view_models/|lib/[a-z_]+/(bloc|view|cubit)"
+   },
+   {
+    "text": "warns against over-engineering",
+    "must": "(no|skip|don't|without)[^.\\n]{0,40}(use[- ]?case|monorepo|packages/|clean architecture)"
+   },
+   {
+    "text": "picks a state library",
+    "must": "riverpod|cubit|bloc"
+   },
+   {
+    "text": "networking layer + typed models",
+    "must": "dio|api_client|ApiClient"
+   },
+   {
+    "text": "lints / ADR",
+    "must": "lints?\\b|very_good_analysis|ADR|decision"
+   }
+  ]
+ },
+ {
+  "id": 4,
+  "name": "riverpod-2-to-3-migration",
+  "checks": [
+   {
+    "text": "AsyncNotifier (no AutoDispose class) in code",
+    "must_not": "extends AutoDispose",
+    "in": "code"
+   },
+   {
+    "text": "plain Ref",
+    "must": "\\(Ref ref\\)"
+   },
+   {
+    "text": "no valueOrNull in code",
+    "must_not": "\\.valueOrNull",
+    "in": "code"
+   },
+   {
+    "text": "StateProvider flagged legacy/ephemeral",
+    "must": "legacy|ephemeral|local widget state"
+   },
+   {
+    "text": "ref.mounted",
+    "must": "ref\\.mounted"
+   },
+   {
+    "text": "Mutations",
+    "must": "Mutation<"
+   }
+  ]
+ },
+ {
+  "id": 5,
+  "name": "modern-dart-refactor",
+  "checks": [
+   {
+    "text": "primary constructor",
+    "must": "class (const )?\\w+\\(\\{?\\s*(required |super\\.)"
+   },
+   {
+    "text": "no force unwrap",
+    "must_not": "discount!",
+    "in": "code"
+   },
+   {
+    "text": "switch expression",
+    "must": "switch \\("
+   },
+   {
+    "text": "badge is a widget class",
+    "must": "class (const )?_?\\w*Badge"
+   },
+   {
+    "text": "collection-if list",
+    "must": "\\bif \\([^)]*\\) (const )?[A-Z_]"
+   },
+   {
+    "text": "Padding / EdgeInsets.all",
+    "must": "Padding\\(|EdgeInsets\\.all"
+   }
+  ]
+ }
+]

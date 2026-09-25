@@ -1,0 +1,3 @@
+name: skill_checks_dart
+environment:
+  sdk: ^3.13.0
