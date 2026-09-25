@@ -1,8 +1,7 @@
-"""Scrape leancode.co sections into markdown. Usage: .venv/bin/python scrape.py glossary"""
+"""Scrape leancode.co sections into markdown (local only, not committed).
+Usage: .venv/bin/python scrape.py glossary|blog   |   python3 scrape.py index  (build the committed link index for the skill)"""
 import re, subprocess, sys, time
 from pathlib import Path
-from bs4 import BeautifulSoup
-from markdownify import markdownify
 
 BASE = "https://leancode.co"
 UA = "flutter-knowledge-scraper (personal study; 1 req/s)"
@@ -15,6 +14,8 @@ def get(url):
 
 
 def extract(html):
+    from bs4 import BeautifulSoup  # only needed for scraping, not for `index`
+    from markdownify import markdownify
     soup = BeautifulSoup(html, "html.parser")
     title = soup.h1.get_text(strip=True).removesuffix(" - LeanCode")
     meta = soup.find("meta", attrs={"name": "description"})
@@ -78,5 +79,21 @@ def main(section):
     (out / "INDEX.md").write_text(f"# LeanCode {section} ({len(lines)})\n\n" + "\n".join(lines) + "\n")
 
 
+def build_index():
+    """Committed, zero-setup index for the leancode-flutter skill: title + URL + one-line description (no article text)."""
+    ref = Path(".claude/skills/leancode-flutter/references")
+    ref.mkdir(parents=True, exist_ok=True)
+    for section in ("glossary", "blog"):
+        lines = [f"# LeanCode {section} index", "", f"Source: {BASE}/{section} (© LeanCode). Titles, links and meta descriptions only. Fetch a URL to read it.", ""]
+        for f in sorted(Path("leancode", section).glob("*.md")):
+            if f.name == "INDEX.md":
+                continue
+            t = f.read_text()
+            get = lambda k: (re.search(rf'^{k}: "?(.*?)"?$', t, re.M) or [None, ""])[1]
+            lines.append(f"- [{get('title')}]({get('source')}) — {get('description')}")
+        (ref / f"{section}.md").write_text("\n".join(lines) + "\n")
+        print(f"{section}: {len(lines) - 4} entries")
+
+
 if __name__ == "__main__":
-    main(sys.argv[1])
+    build_index() if sys.argv[1] == "index" else main(sys.argv[1])
