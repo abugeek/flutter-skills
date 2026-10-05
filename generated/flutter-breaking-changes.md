@@ -1,6 +1,6 @@
 # Flutter breaking changes & migrations (generated)
 
-Generated 2026-09-28 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
+Generated 2026-10-05 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
 Run `dart fix --apply` first (column `dart fix`), then fix the rest manually.
 
 ## 3.47 · OpenGL ES render-to-texture content is stored top-down
@@ -161,11 +161,11 @@ dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/migrate-
 ## 3.44 · Page transition builders reorganization
 dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/decouple-page-transition-builders
 
-If you use `CupertinoPageTransitionsBuilder` and only import `package:flutter/material.dart`, add an import for `package:flutter/cupertino.dart`.
+If you use `CupertinoPageTransitionsBuilder` and only import `package:material_ui/material_ui.dart`, add an import for `package:cupertino_ui/cupertino_ui.dart`.
 
 ```dart
 // before
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 final pageTransitionsTheme = PageTransitionsTheme(
   builders: {
@@ -174,8 +174,8 @@ final pageTransitionsTheme = PageTransitionsTheme(
   },
 );
 // after
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 final pageTransitionsTheme = PageTransitionsTheme(
   builders: {
