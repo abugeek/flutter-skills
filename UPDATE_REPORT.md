@@ -1,6 +1,6 @@
-# Update report 2026-10-05
+# Update report 2026-10-12
 
-Flutter stable 3.47.6 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries: 53.
+Flutter stable 3.47.7 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries: 53.
 
 ## Action needed
 
@@ -9,9 +9,11 @@ Flutter stable 3.47.6 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries:
 - ✅ flutter snippets
 
 ### Package version bumps since last run (check changelogs of majors only)
-- go_router: 18.0.1 → 18.0.2
-- drift: 2.35.0 → 2.35.1
-- cached_network_image: 4.0.2 → 4.0.4
+- drift: 2.35.1 → 2.35.2
+- sqflite: 2.4.4 → 2.4.4+1
+- hive_ce: 2.20.1 → 2.20.2
+- shared_preferences: 2.5.5 → 2.5.6
+- alchemist: 0.14.0 → 0.14.1
 
 ### Source docs changed (read ONLY these, with `git diff --no-index` or a diff tool)
 - changed: sources/bloc/docs__architecture.md
@@ -52,25 +54,6 @@ Flutter stable 3.47.6 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries:
 - changed: sources/flutter/perf__rendering-performance.md
 - changed: sources/flutter/release__whats-new.md
 - changed: sources/flutter/testing__overview.md
-- changed: sources/flutter_breaking/appbar-theme-color.md
-- changed: sources/flutter_breaking/component-theme-normalization-updates.md
-- changed: sources/flutter_breaking/component-theme-normalization.md
-- changed: sources/flutter_breaking/decouple-page-transition-builders.md
-- changed: sources/flutter_breaking/default-android-page-transition.md
-- changed: sources/flutter_breaking/deprecate-dropdownbuttonformfield-value.md
-- changed: sources/flutter_breaking/deprecate-inputdecoration-maintainhintheight.md
-- changed: sources/flutter_breaking/deprecate-onreorder-callback.md
-- changed: sources/flutter_breaking/deprecate-themedata-dialogbackgroundcolor.md
-- changed: sources/flutter_breaking/deprecate-themedata-indicatorcolor.md
-- changed: sources/flutter_breaking/expansion-tile-controller.md
-- changed: sources/flutter_breaking/input-decoration-collapsed.md
-- changed: sources/flutter_breaking/list-tile-color-warning.md
-- changed: sources/flutter_breaking/material-design-3-token-update.md
-- changed: sources/flutter_breaking/material-theme-system-updates.md
-- changed: sources/flutter_breaking/snackbar-with-action-behavior-update.md
-- changed: sources/flutter_breaking/updated-material-3-progress-indicators.md
-- changed: sources/flutter_breaking/updated-material-3-slider.md
-- changed: sources/flutter_breaking/wide-gamut-cupertino-dynamic-color.md
 - changed: sources/flutter_compass_app/command.dart
 - changed: sources/flutter_compass_app/result.dart
 - changed: sources/riverpod/3.0_migration.md
