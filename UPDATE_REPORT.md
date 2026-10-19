@@ -1,4 +1,4 @@
-# Update report 2026-10-12
+# Update report 2026-10-19
 
 Flutter stable 3.47.7 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries: 53.
 
@@ -9,11 +9,10 @@ Flutter stable 3.47.7 / Dart 3.13.5. Skills indexed: 6. Breaking-change entries:
 - ✅ flutter snippets
 
 ### Package version bumps since last run (check changelogs of majors only)
-- drift: 2.35.1 → 2.35.2
-- sqflite: 2.4.4 → 2.4.4+1
-- hive_ce: 2.20.1 → 2.20.2
-- shared_preferences: 2.5.5 → 2.5.6
-- alchemist: 0.14.0 → 0.14.1
+- freezed: 4.0.2 → 4.0.3
+- go_router: 18.0.2 → 18.1.0
+- sqflite: 2.4.4+1 → 2.4.4+2
+- hive_ce: 2.20.2 → 2.22.0
 
 ### Source docs changed (read ONLY these, with `git diff --no-index` or a diff tool)
 - changed: sources/bloc/docs__architecture.md
