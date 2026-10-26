@@ -1,6 +1,6 @@
 # Flutter breaking changes & migrations (generated)
 
-Generated 2026-10-19 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
+Generated 2026-10-26 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
 Run `dart fix --apply` first (column `dart fix`), then fix the rest manually.
 
 ## 3.47 · OpenGL ES render-to-texture content is stored top-down
