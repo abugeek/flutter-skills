@@ -1,6 +1,6 @@
-# Update report 2026-10-26
+# Update report 2026-11-02
 
-Flutter stable 3.47.8 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries: 53.
+Flutter stable 3.47.9 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries: 53.
 
 ## Action needed
 
@@ -9,12 +9,9 @@ Flutter stable 3.47.8 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries:
 - ✅ flutter snippets
 
 ### Package version bumps since last run (check changelogs of majors only)
-- json_serializable: 6.14.1 → 6.15.2
-- go_router: 18.1.0 → 18.1.1
-- drift: 2.35.2 → 2.35.3
-- sqflite: 2.4.4+2 → 2.4.5
-- leancode_lint: 27.0.0 → 28.0.0
-- cached_network_image: 4.0.4 → 4.0.5
+- go_router: 18.1.1 → 18.1.2
+- cached_network_image: 4.0.5 → 4.0.6
+- melos: 8.9.0 → 8.10.0
 
 ### Source docs changed (read ONLY these, with `git diff --no-index` or a diff tool)
 - changed: sources/bloc/docs__architecture.md
