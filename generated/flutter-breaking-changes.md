@@ -1,7 +1,88 @@
 # Flutter breaking changes & migrations (generated)
 
-Generated 2026-11-02 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
+Generated 2026-11-09 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
 Run `dart fix --apply` first (column `dart fix`), then fix the rest manually.
+
+## 3.50 · Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/dropdownbuttonformfield-enabled-parameter
+
+If you previously disabled your `DropdownButtonFormField` by conditionally passing `null` to `onChanged`, you can migrate to the new `enabled` parameter. This cleanly separates the state of the widget (enabled/disabled) from its behavior (the callback).
+
+```dart
+// before
+onChanged: null, // This was the only way to disable it.
+// after
+enabled: false,
+```
+
+## 3.50 · Migrate to standalone `material_ui` and `cupertino_ui` packages
+dart fix: no · https://docs.flutter.dev/release/breaking-changes/material-ui-and-cupertino-ui
+
+To migrate your project from the in-framework design libraries to the standalone packages, you can use the automated `dart fix` tool or perform the migration manually.
+
+```dart
+// before
+import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+
+// ...
+MaterialApp(
+  localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
+    GlobalCupertinoLocalizations.delegate,
+    GlobalMaterialLocalizations.delegate,
+// after
+import 'package:material_ui/material_ui.dart';
+
+// ...
+MaterialApp(
+  localizationsDelegates: GlobalMaterialLocalizations.delegates,
+  // ...
+);
+```
+
+## 3.50 · Restrict Android engine flags in release mode
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/restrict-android-engine-flags-release-mode
+
+You are **affected** if: - You launch release builds using Android `Intent` extras directly (such as with `adb shell am start` or custom launch intents in native code) to pass engine configuration flags or route arguments. - Your CI/CD pipelines, automated scripts, or test runners pass flags to preb
+
+## 3.50 · Soft hyphens render at line breaks
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/soft-hyphen-rendering
+
+On native platforms, text now shows a hyphen when
+
+```dart
+// before
+Text('inter\u00ADnational')
+// after
+Text('inter\u00ADnational', hyphens: Hyphens.hidden)
+```
+
+## 3.50 · Stricter Android `Intent` verification for app entrypoints
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/stricter-android-entrypoint-intent-verification
+
+You do not need to migrate if:
+
+## 3.50 · Web `viewport-fit=cover` `SafeArea` support
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/viewport-fit-cover-safe-area
+
+You are **affected** only if your existing `web/index.html` file already specifies `viewport-fit=cover` in its `<meta name="viewport">` tag.
+
+## 3.50 · WidgetSpan order in right-to-left text
+dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/widgetspan-rtl-bidi-order
+
+If your app uses `WidgetSpan` widgets without compensating for the old layout, no code changes are needed. Otherwise, remove workarounds added specifically for this issue:
+
+```dart
+// before
+WidgetSpan(
+  child: Transform.translate(
+    offset: rtlSwapOffset,
+    child: inlineWidget,
+  ),
+)
+// after
+WidgetSpan(child: inlineWidget)
+```
 
 ## 3.47 · OpenGL ES render-to-texture content is stored top-down
 dart fix: unstated · https://docs.flutter.dev/release/breaking-changes/opengles-render-to-texture-top-down
