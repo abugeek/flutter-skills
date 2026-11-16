@@ -1,6 +1,6 @@
-# Update report 2026-11-09
+# Update report 2026-11-16
 
-Flutter stable 3.47.9 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries: 60.
+Flutter stable 3.50.0 / Dart 3.14.0. Skills indexed: 6. Breaking-change entries: 60.
 
 ## Action needed
 
@@ -9,18 +9,11 @@ Flutter stable 3.47.9 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries:
 - ✅ flutter snippets
 
 ### Package version bumps since last run (check changelogs of majors only)
-- flutter_riverpod: 3.4.3 → 3.5.0
-- riverpod: 3.4.3 → 3.5.0
-- riverpod_annotation: 4.0.7 → 4.0.8
-- riverpod_generator: 4.0.9 → 4.0.10
-- riverpod_lint: 3.1.9 → 3.2.0
-- hooks_riverpod: 3.4.3 → 3.5.0
-- flutter_hooks: 0.21.3+1 → 0.21.4
-- go_router: 18.1.2 → 18.1.3
-- drift: 2.35.3 → 2.35.4
-- hive_ce: 2.22.0 → 2.23.2
-- patrol: 4.10.0 → 4.11.0
-- melos: 8.10.0 → 8.10.1
+- copy_with_extension: 18.0.0 → 18.0.1
+- go_router: 18.1.3 → 18.1.4
+- sqflite: 2.4.5 → 2.4.6
+- hive_ce: 2.23.2 → 2.23.3
+- cached_network_image: 4.0.6 → 4.0.7
 
 ### Source docs changed (read ONLY these, with `git diff --no-index` or a diff tool)
 - changed: sources/bloc/docs__architecture.md
@@ -61,7 +54,6 @@ Flutter stable 3.47.9 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries:
 - changed: sources/flutter/perf__rendering-performance.md
 - changed: sources/flutter/release__whats-new.md
 - changed: sources/flutter/testing__overview.md
-- changed: sources/flutter_breaking/_index.json
 - changed: sources/flutter_compass_app/command.dart
 - changed: sources/flutter_compass_app/result.dart
 - changed: sources/riverpod/3.0_migration.md
@@ -97,11 +89,4 @@ Flutter stable 3.47.9 / Dart 3.13.7. Skills indexed: 6. Breaking-change entries:
 - changed: sources/vgv/development__ui__layouts.md
 - changed: sources/vgv/development__ui__widgets.md
 - changed: sources/vgv/general-practices__security_in_mobile_apps.md
-- new: sources/flutter_breaking/dropdownbuttonformfield-enabled-parameter.md
-- new: sources/flutter_breaking/material-ui-and-cupertino-ui.md
-- new: sources/flutter_breaking/restrict-android-engine-flags-release-mode.md
-- new: sources/flutter_breaking/soft-hyphen-rendering.md
-- new: sources/flutter_breaking/stricter-android-entrypoint-intent-verification.md
-- new: sources/flutter_breaking/viewport-fit-cover-safe-area.md
-- new: sources/flutter_breaking/widgetspan-rtl-bidi-order.md
 
