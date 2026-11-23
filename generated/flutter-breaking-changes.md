@@ -1,6 +1,6 @@
 # Flutter breaking changes & migrations (generated)
 
-Generated 2026-11-16 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
+Generated 2026-11-23 from docs.flutter.dev/release/breaking-changes by `update.py`. Do not edit by hand.
 Run `dart fix --apply` first (column `dart fix`), then fix the rest manually.
 
 ## 3.50 · Added `enabled` to `DropdownButtonFormField` and made `onChanged` optional

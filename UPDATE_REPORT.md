@@ -1,6 +1,6 @@
-# Update report 2026-11-16
+# Update report 2026-11-23
 
-Flutter stable 3.50.0 / Dart 3.14.0. Skills indexed: 6. Breaking-change entries: 60.
+Flutter stable 3.50.1 / Dart 3.14.0. Skills indexed: 6. Breaking-change entries: 60.
 
 ## Action needed
 
@@ -8,12 +8,12 @@ Flutter stable 3.50.0 / Dart 3.14.0. Skills indexed: 6. Breaking-change entries:
 - ✅ dart snippets
 - ✅ flutter snippets
 
+### Skills mentioning outdated major versions
+- .claude/skills/flutter-testing/SKILL.md: `alchemist 0.14` but pub.dev latest is 0.15.0
+
 ### Package version bumps since last run (check changelogs of majors only)
-- copy_with_extension: 18.0.0 → 18.0.1
-- go_router: 18.1.3 → 18.1.4
-- sqflite: 2.4.5 → 2.4.6
-- hive_ce: 2.23.2 → 2.23.3
-- cached_network_image: 4.0.6 → 4.0.7
+- hive_ce: 2.23.3 → 2.24.0
+- alchemist: 0.14.1 → 0.15.0
 
 ### Source docs changed (read ONLY these, with `git diff --no-index` or a diff tool)
 - changed: sources/bloc/docs__architecture.md
@@ -54,6 +54,8 @@ Flutter stable 3.50.0 / Dart 3.14.0. Skills indexed: 6. Breaking-change entries:
 - changed: sources/flutter/perf__rendering-performance.md
 - changed: sources/flutter/release__whats-new.md
 - changed: sources/flutter/testing__overview.md
+- changed: sources/flutter_breaking/uiscenedelegate.md
+- changed: sources/flutter_breaking/wide-gamut-framework.md
 - changed: sources/flutter_compass_app/command.dart
 - changed: sources/flutter_compass_app/result.dart
 - changed: sources/riverpod/3.0_migration.md
